@@ -1,59 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Generate an automated script for installing Flatpak applications.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="public/style.css">
-  <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon">
-  <title>FlatInstall</title>
-</head>
-
-<body>
-
-  <header>
-    <h1>FlatInstall</h1>
-    <p>Generate an automated script for installing Flatpak applications.</p>
-  </header>
-
-  <main>
-
-    <div class="search-box">
-      <input type="search" placeholder="Search applications..." class="js-search-input" />
-    </div>
-
-    <section>
-      <h2>Apps list</h2>
-
-      <div class="app-grid js-apps-list">
-
-      </div>
-    </section>
-
-    <section>
-      <h2>Selected apps</h2>
-
-      <div class="app-grid js-selected-apps">
-
-      </div>
-    </section>
-
-    <section class="script-section">
-      <header class="script-header">
-        <h2>Installation script</h2>
-        <button class="copy-button js-copy-script" id="copy-script">
-          Copy
-        </button>
-      </header>
-
-      <pre class="script-box"><code id="script-output" class="js-script-output"></code></pre>
-    </section>
-
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
-  <script type="module" src="./public/index.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flatinstall-web</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

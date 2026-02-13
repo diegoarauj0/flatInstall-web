@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg-main: #251f32;
+  --bg-card: #3e3947;
+  --bg-card-hover: #5d5963;
+  --bg-search: #2f293a;
+  --bg-script: #1e1a27;
+  --text-main: #ffffff;
+  --text-muted: #dcdcdc;
+  --text-inter: "Inter", sans-serif;
+}
+
+.app-card {
+  transition: 0.3s;
+}
+
+.app-card:hover {
+  transition: 0.2s;
+  filter: brightness(125%);
+  transform: scale(102%);
+}
+
+@keyframes app-card-shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.app-card-shake {
+  animation: app-card-shake 0.3s ease-in-out;
+}
+
+body {
+  font-family: var(--text-inter);
+}

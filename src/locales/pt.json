@@ -1,0 +1,38 @@
+{
+  "header": {
+    "subtitle": "Gere um script automatizado para instalar aplicativos Flatpak."
+  },
+  "search": {
+    "placeholder": "Pesquisar aplicativos... 🔍",
+    "clear": "Limpar",
+    "result_one": "{{count}} resultado",
+    "result_other": "{{count}} resultados"
+  },
+  "catalog": {
+    "title": "Catálogo de Apps 🌐",
+    "resultsFor": "Resultados para \"{{term}}\"",
+    "noApps": "Nenhum app encontrado para esta pesquisa."
+  },
+  "selected": {
+    "title": "Apps Selecionados 🧩",
+    "count": "Apps selecionados {{count}}"
+  },
+  "script": {
+    "title": "Script de instalação 📃",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "failed": "Falhou",
+    "copiedToast": "Código copiado para a área de transferência",
+    "flatpakMissing": "❌ Flatpak não está instalado.",
+    "setupInstructions": "👉 Veja as instruções de instalação: https://flatpak.org/setup/",
+    "noApps": "❌ Nenhum app selecionado.",
+    "installing": "📦 Instalando {{name}}...",
+    "done": "✅ Todos os apps selecionados foram instalados com sucesso."
+  },
+  "app": {
+    "alreadySelected": "Este app já foi selecionado.",
+    "addAria": "Adicionar {{name}}",
+    "removeAria": "Remover {{name}}",
+    "iconAlt": "ícone {{name}}"
+  }
+}
