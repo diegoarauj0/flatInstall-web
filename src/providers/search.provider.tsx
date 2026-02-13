@@ -15,7 +15,7 @@ export function SearchProvider({ children }: { children: ReactNode }) {
     if (!term) return baseCatalog;
 
     const fuse = new Fuse(allApps, {
-      keys: ["name", "summary", "ID"],
+      keys: ["name", "summary", "id", "keywords"],
       threshold: 0.3,
       ignoreLocation: true,
     });

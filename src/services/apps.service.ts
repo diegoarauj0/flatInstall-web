@@ -15,8 +15,8 @@ export class AppsService {
     return apps;
   }
 
-  public static findByID(_ID: string): IApp | null {
-    return apps.filter(({ id }) => id === _ID)[0] || null;
+  public static findById(_id: string): IApp | null {
+    return apps.filter(({ id }) => id === _id)[0] || null;
   }
 
   public static getRandomItems(amount: number): IApp[] {

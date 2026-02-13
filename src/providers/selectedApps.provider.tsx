@@ -10,7 +10,7 @@ export function SelectedAppsProvider({ children }: { children: ReactNode }) {
       value={{
         apps: apps,
         clear: () => setApps([]),
-        delete: (ID) => setApps(apps.filter((app) => app.id !== ID)),
+        delete: (id) => setApps(apps.filter((app) => app.id !== id)),
         set: (_app) => {
           if (apps.filter((app) => app.id === _app.id)[0] === undefined) {
             setApps([...apps, _app]);
