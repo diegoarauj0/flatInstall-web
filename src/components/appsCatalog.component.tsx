@@ -22,9 +22,7 @@ export function AppsCatalogComponent() {
         <AppsListComponent apps={results} />
       </appContext.Provider>
       {results.length === 0 && (
-        <p className="mt-4 text-[var(--text-muted)]">
-          {t("catalog.noApps")}
-        </p>
+        <p className="mt-4 text-[var(--text-muted)]">{t("catalog.noApps")}</p>
       )}
     </section>
   );

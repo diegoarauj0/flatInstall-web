@@ -76,7 +76,11 @@ export function AppComponent({ id, icon, name, summary }: IAppProps) {
     >
       <div className="h-16 w-16 shrink-0">
         {icon ? (
-          <img src={icon} alt={t("app.iconAlt", { name })} className="h-16 w-16" />
+          <img
+            src={icon}
+            alt={t("app.iconAlt", { name })}
+            className="h-16 w-16"
+          />
         ) : (
           <div
             className="h-16 w-16 rounded-md bg-[var(--bg-search)]"

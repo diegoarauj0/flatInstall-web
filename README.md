@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# FlatInstall
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./images/icon.png" width=128 />
 
-Currently, two official plugins are available:
+Site estático que gera um script automatizado para instalar aplicativos Flatpak.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![GitHub license](https://img.shields.io/github/license/diegoarauj0/flatInstall-web?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/diegoarauj0/flatInstall-web?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/diegoarauj0/flatInstall-web?style=for-the-badge)
 
-## React Compiler
+## 📌 Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-## Expanding the ESLint configuration
+- **Tailwindcss**
+- **Typescript**
+- **React**
+- **Vite**
+- **i18next**
+- **fuse.js**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📷 Screenshots
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+<img src="./images/screenshot.gif" />
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- Busca de aplicativos com fuzzy search (`fuse.js`)
+- Geração automática de script Bash para instalação via Flatpak
+- Cópia do script para a área de transferência
+- Internacionalização com `i18next` (`en` e `pt`)
+
+## 🚀 Como executar localmente
+
+### Pré-requisitos
+
+- Node.js 20+
+- npm 10+
+
+### Instalação
+
+```bash
+npm ci
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Ambiente de desenvolvimento
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run dev
 ```
+
+### Build de produção
+
+```bash
+npm run build
+```
+
+### Preview do build
+
+```bash
+npm run preview
+```
+
+## 🌍 Deploy (GitHub Pages)
+
+O projeto possui workflow em `.github/workflows/deploy-gh-pages.yml` que publica no `gh-pages` quando uma nova tag de versão é enviada.
+
+### Publicar nova versão
+
+```bash
+git checkout main
+git pull
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Após isso, o GitHub Actions:
+
+- faz checkout da `main`
+- roda `npm ci` e `npm run build`
+- publica `dist/` na branch `gh-pages`
+
+## 📄 Licença
+
+Este projeto é open-source e está disponível sob a licença MIT.

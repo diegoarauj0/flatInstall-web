@@ -59,7 +59,7 @@ export function ScriptBoxComponent() {
           type="button"
           onClick={handleCopy}
           disabled={apps.length === 0}
-          className={`rounded-lg bg-[var(--bg-card)] px-3 py-2 text-sm font-medium text-[var(--text-main)] transition-colors ${apps.length === 0?"opacity-20 cursor-not-allowed":"hover:bg-[var(--bg-card-hover)] cursor-pointer"}`}
+          className={`rounded-lg bg-[var(--bg-card)] px-3 py-2 text-sm font-medium text-[var(--text-main)] transition-colors ${apps.length === 0 ? "opacity-20 cursor-not-allowed" : "hover:bg-[var(--bg-card-hover)] cursor-pointer"}`}
         >
           {copyStatus === "idle" && t("script.copy")}
           {copyStatus === "success" && t("script.copied")}
