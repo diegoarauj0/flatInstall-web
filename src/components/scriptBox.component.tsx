@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { selectedAppsContext } from "../contexts/selectedApps.context";
 import { useContext, useMemo, useState } from "react";
 
@@ -37,6 +38,7 @@ export function ScriptBoxComponent() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(script);
+      toast("Code moved to clipboard", { type: "success", theme: "dark" });
       setCopyStatus("success");
     } catch {
       setCopyStatus("error");

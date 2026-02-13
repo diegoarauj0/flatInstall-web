@@ -10,7 +10,8 @@ export function AppsListComponent({ apps }: IAppsListProps) {
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
       {apps.map(({ name, summary, icon, id }) => (
         <AppComponent
-          ID={id}
+          key={id}
+          id={id}
           summary={summary || ""}
           name={name}
           icon={icon || ""}
