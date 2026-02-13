@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 export function ScriptBoxComponent() {
   const { apps } = useContext(selectedAppsContext);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [copyStatus, setCopyStatus] = useState<"idle" | "success" | "error">(
     "idle",
   );
@@ -35,7 +35,7 @@ export function ScriptBoxComponent() {
 
     lines.push("", `echo "${t("script.done")}"`);
     return lines.join("\n");
-  }, [apps, i18n.resolvedLanguage, t]);
+  }, [apps, t]);
 
   const handleCopy = async () => {
     try {
