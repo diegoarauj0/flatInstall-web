@@ -20,6 +20,8 @@ export function AppComponent({ id, icon, name, summary }: IAppProps) {
   const { type } = useContext(appContext);
   const { t } = useTranslation();
 
+  const ALREADY_SELECTED_NOTIFICATION_ID = `alreadySelectedNotification${id}`;
+
   useEffect(() => {
     return () => {
       if (errorTimeout.current) window.clearTimeout(errorTimeout.current);
@@ -50,7 +52,11 @@ export function AppComponent({ id, icon, name, summary }: IAppProps) {
       const isSelected = apps.apps.some((app) => app.id === id);
 
       if (isSelected) {
-        toast(t("app.alreadySelected"), { type: "error", theme: "dark" });
+        toast(t("app.alreadySelected", { name }), {
+          type: "error",
+          theme: "dark",
+          toastId: ALREADY_SELECTED_NOTIFICATION_ID,
+        });
         triggerDuplicateFeedback();
         return;
       }

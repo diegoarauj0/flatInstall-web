@@ -10,6 +10,8 @@ export function ScriptBoxComponent() {
     "idle",
   );
 
+  const SCRIPT_COPIED_NOTIFICATION_ID = "scriptCopiedNotification";
+
   const script = useMemo(() => {
     const lines: string[] = [
       "#!/usr/bin/env bash",
@@ -40,7 +42,11 @@ export function ScriptBoxComponent() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(script);
-      toast(t("script.copiedToast"), { type: "success", theme: "dark" });
+      toast(t("script.copiedToast"), {
+        type: "success",
+        theme: "dark",
+        toastId: SCRIPT_COPIED_NOTIFICATION_ID,
+      });
       setCopyStatus("success");
     } catch {
       setCopyStatus("error");
