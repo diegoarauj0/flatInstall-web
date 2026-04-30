@@ -30,7 +30,7 @@
     "done": "✅ Todos os apps selecionados foram instalados com sucesso."
   },
   "app": {
-    "alreadySelected": "Este app já foi selecionado.",
+    "alreadySelected": "{{name}} já foi selecionado.",
     "addAria": "Adicionar {{name}}",
     "removeAria": "Remover {{name}}",
     "iconAlt": "ícone {{name}}"
